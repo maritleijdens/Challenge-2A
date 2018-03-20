@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Time on Earth </title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body>
+		<div id="bg-day" class="background"></div>
+		<div id="bg-night" class="background"></div>
+
+
+
+		<div class="container">
+			<h1 id="date">Time on Earth</h1>
+
+			<div>
+				<img src="images/sun.png" id="sun" class="circle">
+			</div>
+
+			<div>
+				<img src="images/moon.png" id="moon" class="circle">
+			</div>			
+			
+			<div id="clock">	
+				<span id="time">0:00</span>
+			</div>
+
+		</div>
+
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/background.js"></script>
+		<script src="js/circle.js"></script>
+
+	</body>
+</html>
