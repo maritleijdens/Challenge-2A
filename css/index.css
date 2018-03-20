@@ -31,10 +31,7 @@ body {
 	background-image: url("../images/nightsky1.jpg");
 }
 
-.circle {
-	margin: 0px;
-	padding: 0px;
-}
+
 
 #sun {
 	opacity: 1;
@@ -56,14 +53,12 @@ body {
 .container {
 	position: relative;
 	z-index: 6;
-	width: 100%
-/*	margin: 100px auto;
-*/	overflow: hidden;
+	width: 100%;
 	text-align: center;
 }
 
 #clock {
-	margin-top: 5%;
+	margin-top: 20%;
 	position: relative;
 	background-color: #FFFFFF;
 	opacity: 0.5;
@@ -76,7 +71,68 @@ body {
 
 h1 {
 	display: block;
-	font-size: 3em;
+	font-size: 6em;
 
 }
+
+
+/*-------- iPAD --------*/
+
+@media only screen and (min-width: 760px){
+	#clock {
+		margin-top: 5%;
+	}
+
+	.circle {
+
+	}
+
+}
+
+
+/*-------- LAPTOP --------*/
+
+@media only screen and (min-width: 1204px){
+	#clock {
+		margin-top: 5%;
+	}
+
+	.circle {
+		margin-left: 18%;
+	}	
+
+}
+
+/*-------- DESKTOP --------*/
+
+@media only screen and (min-width: 1366px){
+	
+	#clock {
+		margin-top: 1%;
+	}
+
+	.circle {
+		padding: 0;
+		margin-left: 28%;
+	}	
+
+	h1 {
+		margin-bottom: 2%;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

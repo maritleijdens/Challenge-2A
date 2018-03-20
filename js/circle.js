@@ -4,7 +4,7 @@ TweenLite.set("#sun", {
 });
 
 TweenMax.to("#sun", 4, {
-	bezier: getBezier(150, 150, 150, 150, true),
+	bezier: getBezier(400, 400, 400, 400, true),
 	repeat: -1,
 	ease:Linear.easeNone
 });
@@ -30,13 +30,15 @@ function getBezier(cx, cy, rx, ry, autoRotate) {
 	};
 }
 
+
+// DRAAIEN MAAN
 TweenLite.set("#moon", {
 	xPercent: -400, 
 	yPercent: -50
 });
 
 TweenMax.to("#moon", 4, {
-	bezier: getBezier(150, 150, 150, 150, true),
+	bezier: getBezier(400, 400, 400, 400, true),
 	repeat: -1,
 	ease:Linear.easeNone
 });
