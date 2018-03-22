@@ -30,9 +30,9 @@ function renderClock() {
 
 			TweenMax.to("#time", 6, {color: "#000000"});
 
-			TweenMax.to("#sun", 3, {opacity:1});
+			TweenMax.to("#sun", 1, {opacity:1});
 
-			TweenMax.to("#moon", 3, {opacity:0});
+			TweenMax.to("#moon", 1, {opacity:0});
 
 		}
 
@@ -47,27 +47,12 @@ function renderClock() {
 
 			TweenMax.to("#time", 6, {color: "#FFFFFF"});
 
-			TweenMax.to("#sun", 3, {opacity:0});
+			TweenMax.to("#sun", 1, {opacity:0});
 
-			TweenMax.to("#moon", 3, {opacity:1});
+			TweenMax.to("#moon", 1, {opacity:1});
 		}
 
-		else {
-			TweenMax.to("#bg-day", 0, {opacity:0});
-
-			TweenMax.to("#bg-night", 0, {opacity:1});
-
-			TweenMax.to("#date", 0, {color:"#FFFFFF"});
-
-			TweenMax.to("#clock", 0, {backgroundColor:"#000000"});
-
-			TweenMax.to("#time", 0, {color: "#FFFFFF"});
-
-			TweenMax.to("#sun", 0, {opacity:0});
-
-			TweenMax.to("#moon", 0, {opacity:1});
-		}
-
+		
 		
 }
 
@@ -91,7 +76,7 @@ function getCurrentTime(date) {
 	time['seconds'] = date.getSeconds();
 	time['minutes'] = date.getMinutes(),
 	time['hours']   = date.getHours();
-	console.log(time['seconds']);
+	// console.log(time['seconds']);
 
 	// uur hoger dan 10
 	if (time['hours'] < 10) {
@@ -104,7 +89,7 @@ function getCurrentTime(date) {
 	}
 
 	return time;
-	console.log(time);
+	// console.log(time);
 
 
 
