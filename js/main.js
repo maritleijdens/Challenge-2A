@@ -1,37 +1,77 @@
-
-/**
- * Start clock
- */
 function initClock() {
 
 	// init
 	renderClock();
 
-	// run every second
+	// elke seconde
 	setInterval(renderClock, 1000);
-
-	// changeBackground();
 }
 
-/**
- * Render clock
- */
 function renderClock() {
 
-	// get HTML elements
+	// elemnten uit html halen
 	var clock = document.getElementById('time');
 	var time  = getCurrentTime(new Date());
 	var sep   = flashSeperator(time['seconds']);
 
-	// display time
+	// hoe de klok eruit komt te zien
 	clock.innerHTML = time['hours'] + sep +  time['minutes'];
+	var x = 20
+
+
+		if (time['hours'] > 5) {
+			TweenMax.to("#bg-night", 4, {opacity:0});
+
+			TweenMax.to("#bg-day", 4, {opacity:1});
+
+			TweenMax.to("#date", 6, {color:"#000000"});
+
+			TweenMax.to("#clock", 6, {backgroundColor:"#ffffff"});
+
+			TweenMax.to("#time", 6, {color: "#000000"});
+
+			TweenMax.to("#sun", 3, {opacity:1});
+
+			TweenMax.to("#moon", 3, {opacity:0});
+
+		}
+
+		if (time['hours'] > 17) {
+			TweenMax.to("#bg-day", 4, {opacity:0});
+
+			TweenMax.to("#bg-night", 4, {opacity:1});
+
+			TweenMax.to("#date", 6, {color:"#FFFFFF"});
+
+			TweenMax.to("#clock", 6, {backgroundColor:"#000000"});
+
+			TweenMax.to("#time", 6, {color: "#FFFFFF"});
+
+			TweenMax.to("#sun", 3, {opacity:0});
+
+			TweenMax.to("#moon", 3, {opacity:1});
+		}
+
+		else {
+			TweenMax.to("#bg-day", 0, {opacity:0});
+
+			TweenMax.to("#bg-night", 0, {opacity:1});
+
+			TweenMax.to("#date", 0, {color:"#FFFFFF"});
+
+			TweenMax.to("#clock", 0, {backgroundColor:"#000000"});
+
+			TweenMax.to("#time", 0, {color: "#FFFFFF"});
+
+			TweenMax.to("#sun", 0, {opacity:0});
+
+			TweenMax.to("#moon", 0, {opacity:1});
+		}
+
+		
 }
 
-/**
- * Flash seperator 
- * @param integer - seconds
- * @return string
- */
+// de : die wordt gebruikt zorgt ervoor dat de seconden bij worden gehouden
 function flashSeperator(seconds) {
 	var sepClass = '';
 
@@ -43,77 +83,33 @@ function flashSeperator(seconds) {
 	return '<span' + sepClass + '">:</span>';
 }
 
-/**
- * Parse the time
- * @param date object - current time 
- * @return date array
- */
+
 function getCurrentTime(date) {
 	var time = [];
 
-	// fill array
+	// tijd van laptop afhalen
 	time['seconds'] = date.getSeconds();
 	time['minutes'] = date.getMinutes(),
 	time['hours']   = date.getHours();
+	console.log(time['seconds']);
 
-	// hours: add leading zero
+	// uur hoger dan 10
 	if (time['hours'] < 10) {
 		time['hours'] = '0' + time['hours'];
 	}
 
-	// minutes: add leading zero
+	// minnuten hoger dan 10
 	if (time['minutes'] < 10) {
 		time['minutes'] = '0' + time['minutes'];
 	}
 
 	return time;
+	console.log(time);
+
+
+
 }
 
-// function changeBackground(background) {
-// 	var time = [];
-
-// 	// fill array
-// 	time['seconds'] = background.getSeconds();
-// 	time['minutes'] = background.getMinutes(),
-// 	time['hours']   = background.getHours();
-
-// 	// hours: add leading zero
-// 	if (time['minutes'] < 50) {
-// 		TweenMax.to("#bg-day", 4, {opacity:0});
-
-// 		TweenMax.to("#bg-night", 4, {opacity:1});
-
-// 		TweenMax.to("#date", 6, {color:"#FFFFFF"});
-
-// 		TweenMax.to("#clock", 6, {backgroundColor:"#000000"});
-
-// 		TweenMax.to("#time", 6, {color: "#FFFFFF"});
-
-// 		TweenMax.to("#sun", 6, {opacity:0});
-
-// 		TweenMax.to("#moon", 6, {opacity:1});
-
-// 	}
-
-// 	// minutes: add leading zero
-// 	if (time['minutes'] < 48) {
-// 		TweenMax.to("#bg-night", 4, {opacity:0, delay:7});
-
-// 		TweenMax.to("#bg-day", 4, {opacity:1, delay:7});
-
-// 		TweenMax.to("#date", 6, {color:"#000000", delay:7});
-
-// 		TweenMax.to("#clock", 6, {backgroundColor:"#ffffff", delay:7});
-
-// 		TweenMax.to("#time", 6, {color: "#000000", delay:7});
-
-// 		TweenMax.to("#sun", 6, {opacity:1, delay:7});
-
-// 		TweenMax.to("#moon", 6, {opacity:0, delay:7});
-// 	}
-
-// 	return time;
-// }
 
 
 // start
