@@ -8,7 +8,7 @@ TweenLite.set("#sun", {
 //duurt 10 seconden
 TweenMax.to("#sun", 15, {
 	//grootte rondje
-	bezier: getBezier(160, 120, 140, 130, true),
+	bezier: getBezier(160, -100, 140, 130, true),
 	//eindeloze door blijven gaan
 	repeat: -1,
 	ease:Linear.easeNone
@@ -43,7 +43,7 @@ function myFunction(x) {
     if (x.matches) { // If media query matches
         TweenMax.to("#sun", 15, {
 			//grootte rondje
-			bezier: getBezier(325, 250, 300, 300, true),
+			bezier: getBezier(325, -100, 300, 300, true),
 			//eindeloze door blijven gaan
 			repeat: -1,
 			ease:Linear.easeNone
@@ -63,7 +63,7 @@ function myFunctionLaptop(x) {
     if (x.matches) { // If media query matches
         TweenMax.to("#sun", 15, {
 			//grootte rondje
-			bezier: getBezier(550, 250, 400, 300, true),
+			bezier: getBezier(550, -200, 250, 200, true),
 			//eindeloze door blijven gaan
 			repeat: -1,
 			ease:Linear.easeNone
@@ -84,7 +84,7 @@ function myFunctionDesktop(x) {
     if (x.matches) { // If media query matches
         TweenMax.to("#sun", 15, {
 			//grootte rondje
-			bezier: getBezier(650, 250, 550, 300, true),
+			bezier: getBezier(650, -200, 250, 150, true),
 			//eindeloze door blijven gaan
 			repeat: -1,
 			ease:Linear.easeNone
@@ -114,7 +114,7 @@ TweenLite.set("#moon", {
 //duurt 10 seconden
 TweenMax.to("#moon", 15, {
 	//grootte cirkel
-	bezier: getBezier(130, 150, 150, 150, true),
+	bezier: getBezier(130, -50, 150, 150, true),
 	//eindeloos blijven herhalen
 	repeat: -1,
 	ease:Linear.easeNone
@@ -143,11 +143,11 @@ function getBezier(cx, cy, rx, ry, autoRotate) {
 
 // Media Query voor iPad
 
-function myFunction(x) {
+function myFunctionIpadMaan(x) {
     if (x.matches) { // If media query matches
         TweenMax.to("#moon", 15, {
 			//grootte rondje
-			bezier: getBezier(280, 290, 300, 300, true),
+			bezier: getBezier(280, -50, 300, 300, true),
 			//eindeloze door blijven gaan
 			repeat: -1,
 			ease:Linear.easeNone
@@ -156,18 +156,18 @@ function myFunction(x) {
 }
 
 var x = window.matchMedia("(min-width: 760px)")
-myFunction(x) // Call listener function at run time
+myFunctionIpadMaan(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
 
 
 // Media Query voor laptop
 
-function myFunctionLaptop(x) {
+function myFunctionLaptopMaan(x) {
     if (x.matches) { // If media query matches
         TweenMax.to("#moon", 15, {
 			//grootte rondje
-			bezier: getBezier(250, 320, 400, 300, true),
+			bezier: getBezier(180, -50, 250, 200, true),
 			//eindeloze door blijven gaan
 			repeat: -1,
 			ease:Linear.easeNone
@@ -176,7 +176,7 @@ function myFunctionLaptop(x) {
 }
 
 var x = window.matchMedia("(min-width: 1204px)")
-myFunctionLaptop(x) // Call listener function at run time
+myFunctionLaptopMaan(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
 
@@ -184,11 +184,11 @@ x.addListener(myFunction) // Attach listener function on state changes
 
 // Media Query voor desktop
 
-function myFunctionDesktop(x) {
+function myFunctionDesktopMaan(x) {
     if (x.matches) { // If media query matches
         TweenMax.to("#moon", 15, {
 			//grootte rondje
-			bezier: getBezier(120, 350, 550, 300, true),
+			bezier: getBezier(120, -50, 250, 150, true),
 			//eindeloze door blijven gaan
 			repeat: -1,
 			ease:Linear.easeNone
@@ -197,6 +197,6 @@ function myFunctionDesktop(x) {
 }
 
 var x = window.matchMedia("(min-width: 1366px)")
-myFunctionDesktop(x) // Call listener function at run time
+myFunctionDesktopMaan(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
